@@ -1,23 +1,26 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 //Components
-import { Home } from '../components/Home';
-import { Checkout } from '../components/Checkout';
-import { Information } from '../components/Information';
-import { Payment } from '../components/Payment';
-import { Success } from '../components/Success';
-import { NotFound } from '../components/NotFound';
-import "../styles/app.css";
+import { Layout } from "../components/Layout";
+//Containers
+import { Home } from "../containers/Home";
+import { Checkout } from "../containers/Checkout";
+import { Information } from "../containers/Information";
+import { Payment } from "../containers/Payment";
+import { Success } from "../containers/Success";
+import { NotFound } from "../containers/NotFound";
 
 export const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/checkout" element={<Checkout />} />
-      <Route path="/checkout/information" element={<Information />} />
-      <Route path="/checkout/payment" element={<Payment />} />
-      <Route path="/checkout/success" element={<Success />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout/information" element={<Information />} />
+        <Route path="/checkout/payment" element={<Payment />} />
+        <Route path="/checkout/success" element={<Success />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Layout>
   );
 };
